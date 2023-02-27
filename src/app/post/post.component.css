@@ -1,0 +1,21 @@
+.entry-footer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 40px;
+}
+
+.btn.btn-default {
+    margin-left: 5px;
+    background-color: rgb(22, 58, 92);
+    color: #ffffff;
+    cursor: pointer;
+    height: 40px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    width: 100%;
+}

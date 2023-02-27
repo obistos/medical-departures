@@ -1,0 +1,37 @@
+<main class="site-main" role="main">
+  <article class="post" *ngIf="isView && post">
+    <h1 class="entry-title">{{post.title}}</h1>
+    <div class="entry-meta">
+      <span class="posted-on">27 February 2023</span>
+    </div>
+    <div class="entry-content">
+      <p>{{post.body}}</p>
+    </div>
+  </article>
+  <article *ngIf="!isView">
+    <form [formGroup]="form" (submit)="createPost()">
+        <div class="form-group">
+            <label for="title">Title: </label>
+            <input type="text"
+                 formControlName="title"
+                 id="title"
+                 required>
+        </div>
+        <div class="form-group">
+            <label for="body">Article content: </label>
+            <textarea 
+                 formControlName="body"
+                 id="body"
+                 required>
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </article>
+  <article *ngIf="isView">
+    <div class="entry-footer">
+        <button class="btn btn-default" (click)="toggleUI()">Create Post</button>
+        <button class="btn btn-default" (click)="deletePost()">Delete Post</button>
+    </div>
+  </article>
+</main>

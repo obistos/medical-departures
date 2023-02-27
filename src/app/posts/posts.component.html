@@ -1,0 +1,16 @@
+<main>
+    <div id="heading">
+        <h1><span>Latest</span> Posts</h1>
+    </div>
+    <ng-container *ngFor="let post of posts">
+        <article>
+            <img src="https://via.placeholder.com/150/92c952" />
+            <div class="text">
+                <h2>{{post.title}}</h2>
+                <p>27 February 2023</p>
+                <p>{{post.body}}</p>
+                <a class="read-more" [routerLink]="[post.id]">Read more...</a>
+            </div>
+        </article>
+    </ng-container>
+</main>
